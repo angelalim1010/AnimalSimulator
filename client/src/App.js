@@ -1,7 +1,7 @@
 import React,{Component}from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import { getTest } from "./actions/testAction";
+import { getTest } from "./actions/testAction";
 
 class App extends Component{
   constructor(props) {
@@ -9,15 +9,15 @@ class App extends Component{
     this.state = { apiResponse: "" };
 }
 
-// callAPI() {
-//    getTest().then(res=>{
-//      this.setState({apiResponse: res.data})
-//    })
-// }
+callAPI() {
+   getTest().then(res=>{
+     this.setState({apiResponse: res.data})
+   })
+}
 
-// componentDidMount() {
-//     this.callAPI();
-// }
+componentDidMount() {
+    this.callAPI();
+}
 render(){
   return (
     <div className="App">
