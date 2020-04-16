@@ -1,8 +1,24 @@
-import React from 'react';
+import React,{Component}from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import { getTest } from "./actions/testAction";
 
-function App() {
+class App extends Component{
+  constructor(props) {
+    super(props);
+    this.state = { apiResponse: "" };
+}
+
+// callAPI() {
+//    getTest().then(res=>{
+//      this.setState({apiResponse: res.data})
+//    })
+// }
+
+// componentDidMount() {
+//     this.callAPI();
+// }
+render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +35,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <p className="App-intro">{this.state.apiResponse}</p>
+
     </div>
   );
+}
+  
 }
 
 export default App;
