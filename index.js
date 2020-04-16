@@ -1,4 +1,6 @@
 
+require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -40,6 +42,16 @@ app.get("/*", (req, res) => {
 
 
 
+// Heroku post-build script
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -56,9 +68,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8080, () => {
-  console.log("Express Server running on port 8080");
-});
+app.listen(process.env.PORT || 8080,()=> console.log('App listening on port 8080'));
+
 
 
 
