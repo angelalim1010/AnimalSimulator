@@ -14,6 +14,7 @@
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "acorn": "^7.1.1",
+    "axios": "^0.19.2",
     "clean-css": "^4.2.3",
     "constantinople": "^4.0.1",
     "cookie-parser": "~1.4.4",
