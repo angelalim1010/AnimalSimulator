@@ -8,7 +8,7 @@ class Home extends React.Component {
 
   render = () => {
     return (
-      <div>
+      <div style={{ ...styles.home, ...styles.centerItems }}>
         <AnimalCreator />
         <RecentAnimals />
       </div>
@@ -17,3 +17,16 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+const styles = {
+  home: {
+    minHeight: "100vh",
+    minWidth: "100vw",
+    flexDirection: "column",
+  },
+  centerItems: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+};
