@@ -1,7 +1,9 @@
 import React from "react";
+import axios from "axios";
+import animalURL from "../utils/animalURL";
 import { AnimalCreator, RecentAnimals } from ".";
 
-class Home extends React.Component {
+export default class Home extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,7 +39,18 @@ class Home extends React.Component {
   }
 
   componentDidMount = () => {
-    // TODO: GET /animals
+    this.getAnimals();
+  };
+
+  getAnimals = () => {
+    console.log("Calling getAnimals");
+    axios.get(animalURL).then((res) => {
+      if (res) {
+        this.setState({
+          recentAnimals: res,
+        });
+      }
+    });
   };
 
   render = () => {
@@ -46,14 +59,12 @@ class Home extends React.Component {
 
     return (
       <div style={{ ...styles.home, ...styles.centerItems }}>
-        <AnimalCreator {...{ currentAnimal }} />
+        <AnimalCreator {...{ currentAnimal }} getAnimals={this.getAnimals} />
         <RecentAnimals {...{ recentAnimals }} />
       </div>
     );
   };
 }
-
-export default Home;
 
 const styles = {
   home: {

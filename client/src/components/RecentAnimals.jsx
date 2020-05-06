@@ -1,7 +1,7 @@
 import React from "react";
 import AnimalTypes from "../constants/AnimalTypes";
 
-class RecentAnimals extends React.Component {
+export default class RecentAnimals extends React.Component {
   renderAnimals = () => {
     let res = [];
 
@@ -31,8 +31,6 @@ class RecentAnimals extends React.Component {
     );
   };
 }
-
-export default RecentAnimals;
 
 const styles = {
   recentAnimals: {

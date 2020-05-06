@@ -1,7 +1,9 @@
 import React from "react";
+import axios from "axios";
+import animalURL from "../utils/animalURL";
 import AnimalTypes from "../constants/AnimalTypes";
 
-class AnimalCreator extends React.Component {
+export default class AnimalCreator extends React.Component {
   constructor(props) {
     super(props);
 
@@ -21,7 +23,18 @@ class AnimalCreator extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Add axios POST request
+
+    const { animalName, animalType } = this.state;
+    const payload = { name: animalName, type: animalType };
+
+    console.log("payload:", payload);
+
+    // Check that name is not empty
+    if (animalName.length > 0) {
+      axios.post(animalURL, payload).then((res) => {
+        this.props.getAnimals();
+      });
+    }
   };
 
   renderAnimalTypeOptions = () => {
@@ -43,12 +56,7 @@ class AnimalCreator extends React.Component {
 
     return (
       <div style={styles.animalCreator}>
-        <form
-          style={styles.form}
-          noValidate
-          autoComplete="off"
-          onSubmit={this.handleSubmit}
-        >
+        <form style={styles.form} onSubmit={this.handleSubmit}>
           <div style={{ ...styles.image, ...styles.centerItems }}>
             {AnimalTypes[animalType]} Image
           </div>
@@ -74,8 +82,6 @@ class AnimalCreator extends React.Component {
     );
   };
 }
-
-export default AnimalCreator;
 
 const styles = {
   animalCreator: {
