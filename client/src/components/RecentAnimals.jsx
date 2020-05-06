@@ -11,6 +11,9 @@ export default class RecentAnimals extends React.Component {
         <div
           style={{ ...styles.animal, ...styles.centerItems }}
           key={animal.id}
+          onClick={() =>
+            this.props.loadAnimal({ name: animal.name, type: animal.type })
+          }
         >
           <img
             src={animalConfig?.imageURL}
@@ -52,6 +55,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-evenly",
     marginTop: 20,
+    cursor: "pointer",
   },
   animal: {
     border: "1px solid black",

@@ -3,6 +3,7 @@ import axios from "axios";
 import animalURL from "../utils/animalURL";
 import AnimalTypes from "../constants/AnimalTypes";
 import playAudio from "../utils/playAudio";
+import isEqual from "lodash.isequal";
 
 export default class AnimalCreator extends React.Component {
   constructor(props) {
@@ -15,6 +16,18 @@ export default class AnimalCreator extends React.Component {
       animalType: currentAnimal?.type || Object.keys(AnimalTypes)[0].type,
     };
   }
+
+  componentDidUpdate = (prevProps) => {
+    const { currentAnimal } = this.props;
+
+    // If a new currentAnimal was received as a prop, set it to state
+    if (!isEqual(prevProps.currentAnimal, currentAnimal)) {
+      this.setState({
+        animalName: currentAnimal?.name,
+        animalType: currentAnimal?.type,
+      });
+    }
+  };
 
   handleChange = (e) => {
     this.setState({
