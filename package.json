@@ -11,6 +11,7 @@
     "start-proxy": "! pgrep cloud_sql_proxy > /dev/null && cloud_sql_proxy -dir=/cloudsql -instances=animalsimulator:us-east4:animal-simulator"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.13",
     "acorn": "^7.1.1",
     "clean-css": "^4.2.3",
     "constantinople": "^4.0.1",
