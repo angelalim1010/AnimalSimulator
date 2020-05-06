@@ -1,8 +1,28 @@
-// constant : name
+// animalType (int) : animalConfig { name(string), imageURL(string), soundURL(string) }
 export default {
-  1: "Cow",
-  2: "Cat",
-  3: "Dog",
-  4: "Sheep",
-  5: "Horse",
+  1: {
+    name: "Cow",
+    imageURL: "",
+    soundURL: "",
+  },
+  2: {
+    name: "Cat",
+    imageURL: "",
+    soundURL: "",
+  },
+  3: {
+    name: "Dog",
+    imageURL: "",
+    soundURL: "",
+  },
+  4: {
+    name: "Sheep",
+    imageURL: "",
+    soundURL: "",
+  },
+  5: {
+    name: "Horse",
+    imageURL: "",
+    soundURL: "",
+  },
 };

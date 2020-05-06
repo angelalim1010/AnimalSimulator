@@ -12,7 +12,7 @@ export default class RecentAnimals extends React.Component {
           key={animal?.id}
         >
           <div style={{ ...styles.animalImage, ...styles.centerItems }}>
-            {AnimalTypes[animal?.type]} Image
+            {AnimalTypes[animal?.type]?.name} Image
           </div>
           <div style={styles.animalName}>{animal?.name}</div>
         </div>

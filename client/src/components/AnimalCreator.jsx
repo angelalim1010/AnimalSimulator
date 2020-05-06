@@ -11,7 +11,7 @@ export default class AnimalCreator extends React.Component {
 
     this.state = {
       animalName: currentAnimal?.name || "",
-      animalType: currentAnimal?.type || Object.keys(AnimalTypes)[0],
+      animalType: currentAnimal?.type || Object.keys(AnimalTypes)[0].type,
     };
   }
 
@@ -43,7 +43,7 @@ export default class AnimalCreator extends React.Component {
     for (let animalType in AnimalTypes) {
       res.push(
         <option value={animalType} key={animalType}>
-          {AnimalTypes[animalType]}
+          {AnimalTypes[animalType].name}
         </option>
       );
     }
@@ -58,7 +58,7 @@ export default class AnimalCreator extends React.Component {
       <div style={styles.animalCreator}>
         <form style={styles.form} onSubmit={this.handleSubmit}>
           <div style={{ ...styles.image, ...styles.centerItems }}>
-            {AnimalTypes[animalType]} Image
+            {AnimalTypes[animalType].name} Image
           </div>
           <input
             name="animalName"
