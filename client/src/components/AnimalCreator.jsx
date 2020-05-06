@@ -97,6 +97,7 @@ const styles = {
   image: {
     height: 150,
     width: 150,
+    objectFit: "cover",
   },
   input: {
     height: 21,

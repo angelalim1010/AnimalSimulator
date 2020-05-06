@@ -11,9 +11,10 @@ export default class RecentAnimals extends React.Component {
           style={{ ...styles.animal, ...styles.centerItems }}
           key={animal?.id}
         >
-          <div style={{ ...styles.animalImage, ...styles.centerItems }}>
-            {AnimalTypes[animal?.type]?.name} Image
-          </div>
+          <img
+            src={AnimalTypes[animal?.type].imageURL}
+            style={{ ...styles.image, ...styles.centerItems }}
+          />
           <div style={styles.animalName}>{animal?.name}</div>
         </div>
       );
@@ -57,11 +58,12 @@ const styles = {
     width: 80,
     flexDirection: "column",
   },
-  animalImage: {
+  image: {
     height: 60,
     width: 60,
     border: "1px solid lightblue",
     borderRadius: 5,
+    objectFit: "cover",
   },
   animalName: {
     marginTop: 5,

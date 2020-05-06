@@ -29,11 +29,13 @@ export default {
       "https://storage.cloud.google.com/animalsimulator.appspot.com/animalSounds/woof.mp3?authuser=0&cloudshell=false",
   },
   4: {
+    // TODO: Add asset links for Sheep
     name: "Sheep",
     imageURL: "",
     soundURL: "",
   },
   5: {
+    // TODO: Add asset links for Horse
     name: "Horse",
     imageURL: "",
     soundURL: "",
