@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import animalURL from "../utils/animalURL";
 import AnimalTypes from "../constants/AnimalTypes";
+import playAudio from "../utils/playAudio";
 
 export default class AnimalCreator extends React.Component {
   constructor(props) {
@@ -53,14 +54,16 @@ export default class AnimalCreator extends React.Component {
 
   render = () => {
     const { animalName, animalType } = this.state;
+    const animalConfig = AnimalTypes[animalType];
 
     return (
       <div style={styles.animalCreator}>
         <form style={styles.form} onSubmit={this.handleSubmit}>
           <img
-            src={AnimalTypes[animalType]?.imageURL}
-            alt={AnimalTypes[animalType]?.name}
+            src={animalConfig?.imageURL}
+            alt={animalConfig?.name}
             style={{ ...styles.image, ...styles.centerItems }}
+            onClick={() => playAudio(animalConfig?.soundURL)}
           />
           <input
             name="animalName"
@@ -99,6 +102,7 @@ const styles = {
     height: 150,
     width: 150,
     objectFit: "cover",
+    cursor: "pointer",
   },
   input: {
     height: 21,

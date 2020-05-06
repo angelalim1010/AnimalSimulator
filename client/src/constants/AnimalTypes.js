@@ -12,7 +12,7 @@ export default {
     imageURL:
       "https://storage.cloud.google.com/animalsimulator.appspot.com/animalImages/cow.png?authuser=0&cloudshell=false",
     soundURL:
-      "https://storage.cloud.google.com/animalsimulator.appspot.com/animalSounds/meow.mp3?authuser=0&cloudshell=false",
+      "https://storage.cloud.google.com/animalsimulator.appspot.com/animalSounds/moo.mp3?authuser=0&cloudshell=false",
   },
   2: {
     name: "Cat",

@@ -6,14 +6,15 @@ export default class RecentAnimals extends React.Component {
     let res = [];
 
     for (let animal of this.props.recentAnimals) {
+      const animalConfig = AnimalTypes[animal.type];
       res.push(
         <div
           style={{ ...styles.animal, ...styles.centerItems }}
           key={animal.id}
         >
           <img
-            src={AnimalTypes[animal.type]?.imageURL}
-            alt={AnimalTypes[animal.type]?.name}
+            src={animalConfig?.imageURL}
+            alt={animalConfig?.name}
             style={{ ...styles.image, ...styles.centerItems }}
           />
           <div style={styles.animalName}>{animal.name}</div>
