@@ -62,8 +62,6 @@ const styles = {
   image: {
     height: 60,
     width: 60,
-    border: "1px solid lightblue",
-    borderRadius: 5,
     objectFit: "cover",
   },
   animalName: {
