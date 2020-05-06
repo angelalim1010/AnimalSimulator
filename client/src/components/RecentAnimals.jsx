@@ -9,13 +9,14 @@ export default class RecentAnimals extends React.Component {
       res.push(
         <div
           style={{ ...styles.animal, ...styles.centerItems }}
-          key={animal?.id}
+          key={animal.id}
         >
           <img
-            src={AnimalTypes[animal?.type].imageURL}
+            src={AnimalTypes[animal.type]?.imageURL}
+            alt={AnimalTypes[animal.type]?.name}
             style={{ ...styles.image, ...styles.centerItems }}
           />
-          <div style={styles.animalName}>{animal?.name}</div>
+          <div style={styles.animalName}>{animal.name}</div>
         </div>
       );
     }
