@@ -57,9 +57,10 @@ export default class AnimalCreator extends React.Component {
     return (
       <div style={styles.animalCreator}>
         <form style={styles.form} onSubmit={this.handleSubmit}>
-          <div style={{ ...styles.image, ...styles.centerItems }}>
-            {AnimalTypes[animalType].name} Image
-          </div>
+          <img
+            src={AnimalTypes[animalType].imageURL}
+            style={{ ...styles.image, ...styles.centerItems }}
+          />
           <input
             name="animalName"
             style={styles.input}
@@ -94,8 +95,6 @@ const styles = {
     width: 150,
   },
   image: {
-    border: "1px solid black",
-    borderRadius: 5,
     height: 150,
     width: 150,
   },
