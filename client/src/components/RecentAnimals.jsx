@@ -3,19 +3,18 @@ import AnimalTypes from "../constants/AnimalTypes";
 
 class RecentAnimals extends React.Component {
   renderAnimals = () => {
-    let animals = [1, 2, 3, 4, 5];
     let res = [];
 
-    for (let animal in animals) {
+    for (let animal of this.props.recentAnimals) {
       res.push(
         <div
           style={{ ...styles.animal, ...styles.centerItems }}
-          key={animal} // TODO: Make key of animal name + animal type + timestamp
+          key={animal?.id}
         >
           <div style={{ ...styles.animalImage, ...styles.centerItems }}>
-            Image Here
+            {AnimalTypes[animal?.type]} Image
           </div>
-          <div style={styles.animalName}>Name</div>
+          <div style={styles.animalName}>{animal?.name}</div>
         </div>
       );
     }

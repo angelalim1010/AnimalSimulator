@@ -1,8 +1,8 @@
 // constant : name
 export default {
-  CAT: "Cat",
-  COW: "Cow",
-  DOG: "Dog",
-  HORSE: "Horse",
-  SHEEP: "Sheep",
+  1: "Cow",
+  2: "Cat",
+  3: "Dog",
+  4: "Sheep",
+  5: "Horse",
 };

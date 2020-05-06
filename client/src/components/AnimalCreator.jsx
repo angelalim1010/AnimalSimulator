@@ -2,6 +2,28 @@ import React from "react";
 import AnimalTypes from "../constants/AnimalTypes";
 
 class AnimalCreator extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const { currentAnimal } = props;
+
+    this.state = {
+      animalName: currentAnimal?.name || "",
+      animalType: currentAnimal?.type || Object.keys(AnimalTypes)[0],
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: Add axios POST request
+  };
+
   renderAnimalTypeOptions = () => {
     let res = [];
 
@@ -17,20 +39,36 @@ class AnimalCreator extends React.Component {
   };
 
   render = () => {
+    const { animalName, animalType } = this.state;
+
     return (
       <div style={styles.animalCreator}>
-        <form style={styles.form} noValidate autoComplete="off">
+        <form
+          style={styles.form}
+          noValidate
+          autoComplete="off"
+          onSubmit={this.handleSubmit}
+        >
           <div style={{ ...styles.image, ...styles.centerItems }}>
-            Image Here
+            {AnimalTypes[animalType]} Image
           </div>
           <input
+            name="animalName"
             style={styles.input}
-            placeholder="Enter name..." // TODO: Make this the current animal's name
+            value={animalName}
+            onChange={this.handleChange}
           />
-          <select style={styles.select}>
+          <select
+            name="animalType"
+            style={styles.select}
+            value={animalType}
+            onChange={this.handleChange}
+          >
             {this.renderAnimalTypeOptions()}
           </select>
-          <button style={styles.saveButton}>Save</button>
+          <button style={styles.saveButton} type="submit">
+            Save
+          </button>
         </form>
       </div>
     );
