@@ -51,8 +51,8 @@ export default class Home extends React.Component {
     axios.get(animalURL).then((res) => {
       if (res) {
         this.setState({
-          recentAnimals: res,
-          currentAnimal: res[0],
+          recentAnimals: res.data,
+          currentAnimal: res.data[0],
         });
       }
     });
