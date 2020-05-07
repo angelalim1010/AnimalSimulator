@@ -83,19 +83,22 @@ export default class AnimalCreator extends React.Component {
           </div>
           <input
             name="animalName"
-            style={styles.input}
+            style={{ ...styles.input, ...styles.defaultBorder }}
             value={animalName}
             onChange={this.handleChange}
           />
           <select
             name="animalType"
-            style={styles.select}
+            style={{ ...styles.select, ...styles.defaultBorder }}
             value={animalType}
             onChange={this.handleChange}
           >
             {this.renderAnimalTypeOptions()}
           </select>
-          <button style={styles.saveButton} type="submit">
+          <button
+            style={{ ...styles.saveButton, ...styles.defaultBorder }}
+            type="submit"
+          >
             Save
           </button>
         </form>
@@ -146,5 +149,9 @@ const styles = {
     fontSize: 10,
     textAlign: "center",
     marginTop: 5,
+  },
+  defaultBorder: {
+    border: "1px solid black",
+    borderRadius: 5,
   },
 };
