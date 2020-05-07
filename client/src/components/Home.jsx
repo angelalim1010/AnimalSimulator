@@ -46,20 +46,17 @@ export default class Home extends React.Component {
   };
 
   getAnimals = () => {
-    // TODO: Ensure that getAnimals works properly, after setting apiURL
-    console.log("Calling getAnimals");
     axios.get(animalURL).then((res) => {
       if (res) {
         this.setState({
-          recentAnimals: res,
-          currentAnimal: res[0],
+          recentAnimals: res.data,
+          currentAnimal: res.data[0],
         });
       }
     });
   };
 
   loadAnimal = (animal) => {
-    console.log("Calling loadAnimal with animal:", animal);
     this.setState({
       currentAnimal: animal,
     });
@@ -82,6 +79,7 @@ const styles = {
     minHeight: "100vh",
     minWidth: "100vw",
     flexDirection: "column",
+    backgroundColor: "aliceblue",
   },
   centerItems: {
     display: "flex",

@@ -46,6 +46,7 @@ const styles = {
     padding: "20px 40px",
     marginTop: 50,
     textAlign: "center",
+    backgroundColor: "white",
   },
   title: {
     textDecoration: "underline",

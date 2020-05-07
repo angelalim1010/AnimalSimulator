@@ -41,8 +41,6 @@ export default class AnimalCreator extends React.Component {
     const { animalName, animalType } = this.state;
     const payload = { name: animalName, type: animalType };
 
-    console.log("payload:", payload);
-
     // Check that name is not empty
     if (animalName.length > 0) {
       axios.post(animalURL, payload).then((res) => {
@@ -105,6 +103,7 @@ const styles = {
   animalCreator: {
     padding: "50px 60px",
     boxShadow: "0px 0px 8px 4px #888888",
+    backgroundColor: "white",
   },
   form: {
     display: "flex",
