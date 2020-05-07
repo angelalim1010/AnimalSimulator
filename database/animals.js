@@ -1,17 +1,11 @@
 const pool = require("./pool");
 
-const printTime = async (req, res) => {
-  await pool.query("SELECT NOW() AS 'theTime'", (err, payload) => {
-    res.send(payload);
-  });
-};
-
 const getAnimals = async (request, response) => {
   await pool.query("SELECT * FROM animalsettings", (error, results) => {
     if (error) {
       throw error;
     }
-    response.status(200).json(results.rows);
+    response.json(results.rows);
   });
 };
 
@@ -64,7 +58,6 @@ const deleteAnimal = async (request, response) => {
 };
 
 module.exports = {
-  printTime,
   getAnimals,
   updateAnimal,
   addAnimal,

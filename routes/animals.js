@@ -2,24 +2,13 @@ const express = require("express");
 const router = express.Router();
 const animals = require("../database/animals");
 
-router.get("/", (req, res, next) => {
-  res.send("GET /animals");
-  animals.getAnimals();
-});
+router.get("/", animals.getAnimals);
 
-router.post("/", (req, res, next) => {
-  res.send("POST /animals");
-  animals.addAnimal();
-});
+// When adding an animal, should delete the oldest animal
+// IF there are already 5 records
+router.post("/", animals.addAnimal);
 
-router.put("/:id", (req, res, next) => {
-  res.send("PUT /animals/:id");
-  animals.updateAnimal();
-});
-
-router.delete("/:id", (req, res, next) => {
-  res.send("DELETE /animals/:id");
-  animals.deleteAnimal();
-});
+router.put("/:id", animals.updateAnimal); // Not needed
+router.delete("/:id", animals.deleteAnimal); // Not needed
 
 module.exports = router;
