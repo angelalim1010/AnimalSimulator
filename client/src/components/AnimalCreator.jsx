@@ -70,12 +70,17 @@ export default class AnimalCreator extends React.Component {
     return (
       <div style={styles.animalCreator}>
         <form style={styles.form} onSubmit={this.handleSubmit}>
-          <img
-            src={animalConfig?.imageURL}
-            alt={animalConfig?.name}
-            style={{ ...styles.image, ...styles.centerItems }}
+          <div
+            style={styles.imageContainer}
             onClick={() => playAudio(animalConfig?.soundURL)}
-          />
+          >
+            <img
+              src={animalConfig?.imageURL}
+              alt={animalConfig?.name}
+              style={{ ...styles.image, ...styles.centerItems }}
+            />
+            <div style={styles.soundText}>(Click me to play sound)</div>
+          </div>
           <input
             name="animalName"
             style={styles.input}
@@ -114,7 +119,6 @@ const styles = {
     height: 150,
     width: 150,
     objectFit: "cover",
-    cursor: "pointer",
   },
   input: {
     height: 21,
@@ -134,5 +138,13 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  imageContainer: {
+    cursor: "pointer",
+  },
+  soundText: {
+    fontSize: 10,
+    textAlign: "center",
+    marginTop: 5,
   },
 };
