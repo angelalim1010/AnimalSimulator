@@ -103,6 +103,7 @@ const styles = {
   animalCreator: {
     padding: "50px 60px",
     boxShadow: "0px 0px 8px 4px #888888",
+    backgroundColor: "white",
   },
   form: {
     display: "flex",
