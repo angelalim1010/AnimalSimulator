@@ -121,7 +121,7 @@ const styles = {
   image: {
     height: 150,
     width: 150,
-    objectFit: "cover",
+    objectFit: "contain",
   },
   input: {
     height: 21,

@@ -68,7 +68,7 @@ const styles = {
   image: {
     height: 60,
     width: 60,
-    objectFit: "cover",
+    objectFit: "contain",
   },
   animalName: {
     marginTop: 5,
