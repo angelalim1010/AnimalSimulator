@@ -25,9 +25,11 @@ app.use(express.static(path.join(__dirname, "/client/build")));
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const animalsRouter = require("./routes/animals");
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/animals", animalsRouter);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "/client/build/index.html"));

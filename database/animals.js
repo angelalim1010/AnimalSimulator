@@ -1,13 +1,10 @@
-// db.js
+const pool = require("./pool");
 
-const Pool = require("pg").Pool;
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASS,
-  port: 5432,
-});
+const printTime = async (req, res) => {
+  await pool.query("SELECT NOW() AS 'theTime'", (err, payload) => {
+    res.send(payload);
+  });
+};
 
 const getAnimals = async (request, response) => {
   await pool.query("SELECT * FROM animalsettings", (error, results) => {
@@ -67,6 +64,7 @@ const deleteAnimal = async (request, response) => {
 };
 
 module.exports = {
+  printTime,
   getAnimals,
   updateAnimal,
   addAnimal,
