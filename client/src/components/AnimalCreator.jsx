@@ -41,8 +41,6 @@ export default class AnimalCreator extends React.Component {
     const { animalName, animalType } = this.state;
     const payload = { name: animalName, type: animalType };
 
-    console.log("payload:", payload);
-
     // Check that name is not empty
     if (animalName.length > 0) {
       axios.post(animalURL, payload).then((res) => {

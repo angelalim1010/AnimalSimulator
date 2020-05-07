@@ -46,8 +46,6 @@ export default class Home extends React.Component {
   };
 
   getAnimals = () => {
-    // TODO: Ensure that getAnimals works properly, after setting apiURL
-    console.log("Calling getAnimals");
     axios.get(animalURL).then((res) => {
       if (res) {
         this.setState({
@@ -59,7 +57,6 @@ export default class Home extends React.Component {
   };
 
   loadAnimal = (animal) => {
-    console.log("Calling loadAnimal with animal:", animal);
     this.setState({
       currentAnimal: animal,
     });
