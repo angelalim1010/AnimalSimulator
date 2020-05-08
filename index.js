@@ -30,10 +30,6 @@ app.use("/animals", animalsRouter);
 app.use("/users", usersRouter);
 app.use("/", indexRouter);
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"));
-});
-
 // Heroku post-build script
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
