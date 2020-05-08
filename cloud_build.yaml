@@ -1,9 +1,7 @@
 steps:
-  - name: "node"
-    entrypoint: "npm"
+  - name: "gcr.io/cloud-builders/npm"
     args: ["install"]
-  - name: "node"
-    entrypoint: "npm"
+  - name: "gcr.io/cloud-builders/npm"
     args: ["run", "heroku-postbuild"]
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
