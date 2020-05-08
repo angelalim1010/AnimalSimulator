@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, "/client/build")));
 
 const animalsRouter = require("./routes/animals");
 
+app.use("/test", (req, res) => {
+  res.send("test works");
+});
 app.use("/animals", animalsRouter);
 
 // Heroku post-build script
