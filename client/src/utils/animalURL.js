@@ -1,3 +1,1 @@
-import baseURL from "./baseURL";
-
-export default baseURL + "/animals";
+export default "/animals";
