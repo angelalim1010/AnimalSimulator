@@ -5,7 +5,8 @@ export default class RecentAnimals extends React.Component {
   renderAnimals = () => {
     let res = [];
 
-    for (let animal of this.props.recentAnimals) {
+    for (let i = 0; i < this.props.recentAnimals.length && i < 5; ++i) {
+      const animal = this.props.recentAnimals[i];
       const animalConfig = AnimalTypes[animal.type];
       res.push(
         <div
@@ -61,6 +62,7 @@ const styles = {
   animal: {
     border: "1px solid black",
     borderRadius: 5,
+    boxShadow: "0px 0px 8px 4px #888888",
     height: 100,
     width: 80,
     flexDirection: "column",
