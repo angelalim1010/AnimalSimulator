@@ -79,7 +79,7 @@ const styles = {
     minHeight: "100vh",
     minWidth: "100vw",
     flexDirection: "column",
-    backgroundColor: "lightgreen",
+    backgroundColor: "lightskyblue",
   },
   centerItems: {
     display: "flex",
