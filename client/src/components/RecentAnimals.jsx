@@ -61,6 +61,7 @@ const styles = {
   animal: {
     border: "1px solid black",
     borderRadius: 5,
+    boxShadow: "0px 0px 8px 4px #888888",
     height: 100,
     width: 80,
     flexDirection: "column",
