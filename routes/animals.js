@@ -6,9 +6,9 @@ router.get("/", animals.getAnimals);
 
 // When adding an animal, should delete the oldest animal
 // IF there are already 5 records
-router.post("/", animals.addAnimal);
+router.post("/", animals.updateAnimal);
 
-router.put("/:id", animals.updateAnimal); // Not needed
+router.put("/:id", animals.addAnimal); // Not needed
 router.delete("/:id", animals.deleteAnimal); // Not needed
 
 module.exports = router;
