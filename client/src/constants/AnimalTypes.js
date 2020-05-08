@@ -24,20 +24,18 @@ export default {
   3: {
     name: "Dog",
     imageURL:
-      "https://storage.cloud.google.com/animalsimulator.appspot.com/animalImages/dog.jpeg?authuser=0&cloudshell=false",
+      "https://storage.cloud.google.com/animalsimulator.appspot.com/animalImages/dog.png?authuser=0&cloudshell=false",
     soundURL:
       "https://storage.cloud.google.com/animalsimulator.appspot.com/animalSounds/woof.mp3?authuser=0&cloudshell=false",
   },
   4: {
-    // TODO: Add asset links for Sheep
     name: "Sheep",
-    imageURL: "",
-    soundURL: "",
+    imageURL: "https://storage.cloud.google.com/animalsimulator.appspot.com/animalImages/sheep.png?authuser=0&cloudshell=false",
+    soundURL: "https://storage.cloud.google.com/animalsimulator.appspot.com/animalSounds/baa.mp3?authuser=0&cloudshell=false",
   },
   5: {
-    // TODO: Add asset links for Horse
     name: "Horse",
-    imageURL: "",
-    soundURL: "",
-  },
+    imageURL: "https://storage.cloud.google.com/animalsimulator.appspot.com/animalImages/horse.png?authuser=0&cloudshell=false",
+    soundURL: "https://storage.cloud.google.com/animalsimulator.appspot.com/animalSounds/neigh.mp3?authuser=0&cloudshell=false",
+  }
 };
