@@ -30,7 +30,7 @@ app.use("/animals", animalsRouter);
 
 // From - https://facebook.github.io/create-react-app/docs/deployment
 // Set static folder
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "/client/build/qwert")));
 
 // Only now, AFTER the above /api/ routes, the "catchall" handler routes: for any request that doesn't match any route after "/" below and send back React's index.html file.
 // Note, this 'catchall" route MUST be put after the above  /api/ routes. Otherwise those api routes will never be hit
