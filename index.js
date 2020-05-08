@@ -20,8 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, "/client/build")));
-
 const animalsRouter = require("./routes/animals");
 
 app.use("/test", (req, res) => {
