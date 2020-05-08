@@ -30,14 +30,14 @@ app.use("/api/animals", (req, res) => res.send("you've hit /api/animals!!"));
 
 // From - https://facebook.github.io/create-react-app/docs/deployment
 // Set static folder
-// app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 // Only now, AFTER the above /api/ routes, the "catchall" handler routes: for any request that doesn't match any route after "/" below and send back React's index.html file.
 // Note, this 'catchall" route MUST be put after the above  /api/ routes. Otherwise those api routes will never be hit
 // Catch-all GET route
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 // }
 
 // catch 404 and forward to error handler
