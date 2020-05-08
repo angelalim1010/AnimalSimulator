@@ -12,7 +12,6 @@ env_variables:
   DB_DATABASE: "postgres"
   DB_USER: "postgres"
   DB_PASSWORD: "1234"
-  PORT: "8080"
 
 beta_settings:
   # The connection name of your instance, available by using
