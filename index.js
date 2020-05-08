@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 const animalsRouter = require("./routes/animals");
 
-app.use("/animals", animalsRouter);
+app.use("/api/animals", animalsRouter);
 
 // Serve static assets if in production
 // if (process.env.NODE_ENV === "production") {
