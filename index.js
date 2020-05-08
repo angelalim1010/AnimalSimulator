@@ -22,12 +22,11 @@ app.use(cookieParser());
 const animalsRouter = require("./routes/animals");
 
 app.use("/api/animals", animalsRouter);
-app,
-  use("/api/test", (req, res) => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) =>
-      res.send(response.json())
-    );
-  });
+app.use("/api/test", (req, res) => {
+  fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) =>
+    res.send(response.json())
+  );
+});
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
