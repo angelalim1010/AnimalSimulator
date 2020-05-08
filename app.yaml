@@ -4,8 +4,9 @@ handlers:
   - url: /
     static_files: client/build/index.html
     upload: client/build/index.html
-  - url: /
-    static_dir: client/build
+  - url: /(.*)
+    static_files: client/build/\1
+    upload: client/build/(.*)
 
 includes:
   - env_variables.yaml
