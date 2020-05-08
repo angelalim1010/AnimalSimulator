@@ -25,15 +25,15 @@ const animalsRouter = require("./routes/animals");
 app.use("/animals", animalsRouter);
 
 // Serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
+// if (process.env.NODE_ENV === "production") {
+// Set static folder
+app.use(express.static("client/build"));
 
-  // Catch-all GET route
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+// Catch-all GET route
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
+// }
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
