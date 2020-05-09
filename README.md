@@ -8,8 +8,6 @@ Project for Distributed Systems
 npm i && npm i --prefix client && npm run dev
 ```
 
-## Deployment
+## Continuous Deployment
 
-```
-gcloud app deploy
-```
+Using Google Cloud Build, all pushes to `master` are built.
