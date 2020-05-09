@@ -13,7 +13,7 @@ const updateAnimal = async (request, response) => {
   const { name, type } = request.body;
   try {
     await pool.query("BEGIN");
-    await pool.query("DELETE FROM animalsettings WHERE id IN (SELECT id FROM animalsettings ORDER BY id LIMIT 1)");
+    //await pool.query("DELETE FROM animalsettings WHERE id IN (SELECT id FROM animalsettings ORDER BY id LIMIT 1)");
     await pool.query("INSERT INTO animalsettings (name, type) VALUES ($1, $2)", [name, type]);
     let numOfRows; 
     await pool.query("SELECT count(*) FROM animalsettings", (error, results) => {
