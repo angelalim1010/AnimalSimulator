@@ -1,7 +1,7 @@
 const pool = require("./pool");
 
 const getAnimals = async (request, response) => {
-  await pool.query("SELECT * FROM animalsettings", (error, results) => {
+  await pool.query("SELECT * FROM animalsettings ORDER BY id DESC", (error, results) => {
     if (error) {
       throw error;
     }
