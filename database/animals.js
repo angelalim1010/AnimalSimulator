@@ -1,12 +1,8 @@
 const pool = require("./pool");
 
 const getAnimals = async (request, response) => {
-  pool.query("SELECT * FROM animalsettings ORDER BY id DESC", (error, results) => {
-    if (error) {
-      throw error;
-    }
-    response.json(results.rows);
-  });
+  const results = await pool.query("SELECT * FROM animalsettings ORDER BY id DESC");
+  response.json(results.rows);
 };
 
 const updateAnimal = async (request, response) => {
@@ -18,7 +14,6 @@ const updateAnimal = async (request, response) => {
     const result = await pool.query("SELECT count(*) FROM animalsettings")
     const numOfRows = result.rows[0].count;
     if (numOfRows > 5) {
-      console.log( "it is deleting");
       await pool.query("DELETE FROM animalsettings WHERE id = (SELECT MIN(id) FROM animalsettings)")
     }
     await pool.query("COMMIT");
