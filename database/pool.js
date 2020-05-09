@@ -1,9 +1,9 @@
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
+  user: process.env.SQL_USER,
+  database: process.env.SQL_DATABASE,
+  password: process.env.SQL_PASSWORD,
+  host: "/cloudsql/" + process.env.INSTANCE_CONNECTION_NAME,
   port: 5432,
 });
 
